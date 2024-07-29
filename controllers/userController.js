@@ -33,6 +33,7 @@ exports.userSignup = async (req, resp) => {
   }
 };
 
+//user signin function
 exports.userSignIn = async (req, resp) => {
   try {
     const { email, password } = req.body;
