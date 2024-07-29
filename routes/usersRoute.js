@@ -1,8 +1,11 @@
 const express = require('express')
 const router = express.Router()
-const {userSignup} = require('../controllers/userController')
+const {userSignup, userSignIn, purchaseCourse} = require('../controllers/userController')
+const userSigninMiddleware = require('../middleware/authUserMiddleware')
 
 
 router.post('/signup', userSignup)
+router.post('/signin', userSignIn)
+router.post('/purchase', userSigninMiddleware, purchaseCourse)
 
 module.exports = router;
